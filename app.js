@@ -106,5 +106,7 @@ app.delete('/api/books/:_id', (req, res) => {
 	});
 });
 
-app.listen(3000);
-console.log('Running on port 3000...');
+const server = app.listen(process.env.PORT || 8081, () => {
+    const port = server.address().port;
+    console.log(`App listening on port ${port}`);
+  });
